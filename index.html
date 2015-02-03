@@ -1,0 +1,34 @@
+<html>
+
+<!-- Minimum Required Libraries for Backbone -->
+<script src="lib/underscore-1.4.4.js"></script>
+<script src="lib/jquery-1.7.2.js"></script>
+<script src="lib/backbone-0.9.10.js"></script>
+
+
+<!-- load backbone views and Models in Global NameSpace 
+     DEMONSTRATION PURPOSES ONLY, in real life use a module loading framework like requirejs-->
+
+<script src="project.view.js"></script>
+<script src="project.model.js"></script>
+
+
+<div id="content">
+
+   <!-- Backbone View renders HTML here -->
+
+</div>
+
+
+<!-- Create and Open the View -->
+<script>
+
+  var model = new Project();
+  var view = new ProjectView({model: model});
+  view.render();
+
+</script>
+
+
+
+</html>
