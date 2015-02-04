@@ -1,20 +1,48 @@
 <html>
 
+
+<!-- Bootstrap theme, make things look good -->
+<link rel="stylesheet" href="lib/bootstrap-3.3.2/css/bootstrap.min.css"></script>
+
+
+
+
 <!-- Minimum Required Libraries for Backbone -->
 <script src="lib/underscore-1.4.4.js"></script>
 <script src="lib/jquery-1.7.2.js"></script>
 <script src="lib/backbone-0.9.10.js"></script>
 
+<!-- Latest compiled and minified JavaScript -->
+            
+<script src="lib/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+
 
 <!-- load backbone views and Models in Global NameSpace 
      DEMONSTRATION PURPOSES ONLY, in real life use a module loading framework like requirejs-->
 
-<script src="project.view.js"></script>
 <script src="project.model.js"></script>
+<script src="project.list.view.js"></script>
+<script src="project.item.view.js"></script>
+<script src="project.add.view.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<div id="content">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12"><p class="text-center"><h4>Simple BackboneJS example, No Server required</h4></p></div>
+    </div>   
+ 
+    <div class="row">
+        <div id="content" class="col-md-12"></div>
+    </div>	
 
+     <div class="row">
+        <div id="add" class="col-md-12"></div>
+    </div>	
+
+
+    
    <!-- Backbone View renders HTML here -->
 
 </div>
@@ -23,9 +51,14 @@
 <!-- Create and Open the View -->
 <script>
 
-  var model = new Project();
-  var view = new ProjectView({model: model});
+  var collection = projects;
+  var view = new ProjectListView({collection: collection});
   view.render();
+
+  var addView = new ProjectAddView();
+  addView.render();
+
+  
 
 </script>
 
