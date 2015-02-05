@@ -7,18 +7,38 @@ ProjectListView = Backbone.View.extend({
        this.collection = options.collection;
        // NOTE: This would be called if server API involved
        //this.model.fetch({success: function(model){ this.render}});
-       
+      $('#content').unbind();       
 
     },
 
 
     events: {
 
-    'click .glyphicon-remove' : 'hello'
+    'click .glyphicon-remove' : 'delete',
+    'click  td' : 'edit'
+
+
     
     },
 
-    hello: function(e) {
+    edit: function(e) {
+      e.preventDefault();
+
+      var id = e.target.id;
+      var value = $('#'+id).html();
+      $('#'+id).empty();
+      var editView = new ProjectEditView({el:'td#'+id, value:value, id:id});
+      editView.render();
+
+      $('#'+id).focus();
+
+    //  alert('edit');
+
+
+    },
+
+
+    delete: function(e) {
         e.preventDefault();
         var id = e.target.id;
        
@@ -44,9 +64,11 @@ ProjectListView = Backbone.View.extend({
 
 
     render: function() {
-        var compiled_template = _.template(this.html());
-		var $el = $(this.el);
-		$el.html(compiled_template());
+
+     
+      var compiled_template = _.template(this.html());
+		  var $el = $(this.el);
+      $el.html(compiled_template());
 
      this.addRows();
 

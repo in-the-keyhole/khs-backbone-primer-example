@@ -24,9 +24,9 @@ ProjectItemView = Backbone.View.extend({
     
     html: function() {
 
-       return  '<tr><td><%=name%> </td> '+
-       		     '<td><%=resources%> </td> '+
-       		     '<td><%=hours%> </td>'+
+       return  '<tr><td id="<%=id%>-name"><%=name%> </td> '+
+       		     '<td id="<%=id%>-resources"><%=resources%> </td> '+
+       		     '<td id="<%=id%>-hours"> <%=hours%> </td>'+
                '<td> <span id=<%=id%> class="glyphicon glyphicon-remove"/></td> </tr>';
                
 
