@@ -5,5 +5,5 @@ Shows the Power of a client SPA built with Backbone Views and Models
 
 No SERVER Required, just open the `index.html` from a browser
 
-![](img/backbone-primer-example-2)
+![](img/backbone-primer-ui-2.png)
 
