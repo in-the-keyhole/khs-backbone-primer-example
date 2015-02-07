@@ -5,5 +5,5 @@ Shows the Power of a client SPA built with Backbone Views and Models
 
 No SERVER Required, just open the `index.html` from a browser
 
-![](img/)
+![](https://github.com/in-the-keyhole/khs-backbone-primer-example/tree/master/img)
 
