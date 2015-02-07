@@ -4,7 +4,7 @@ ProjectEditView = Backbone.View.extend({
 
     initialize: function(options) {
     	this.value = options.value;
-    	this.id = options.id;
+    	this.id = 'edit-'+options.id;
        
     },
 
@@ -26,8 +26,8 @@ ProjectEditView = Backbone.View.extend({
    	   var cid = e.target.id;
    	   value = $('#'+this.id).val();
        var array = this.id.split('-');
-       var id = array[0];
-       var prop = [1];
+       var id = array[1];
+       var prop = array[2];
        var model = projects.get(id);
        model.set(prop,value);
     
@@ -52,7 +52,6 @@ ProjectEditView = Backbone.View.extend({
       var $el = $(this.el);
       $el.append(compiled_template({value: this.value, id: this.id}));
 
-     
     
     },
 

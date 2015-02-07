@@ -11,6 +11,8 @@
 <script src="lib/underscore-1.4.4.js"></script>
 <script src="lib/jquery-1.7.2.js"></script>
 <script src="lib/backbone-0.9.10.js"></script>
+<script src="lib/c3.min.js"></script>
+<script src="lib/d3.min.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
             
@@ -25,27 +27,42 @@
 <script src="project.item.view.js"></script>
 <script src="project.add.view.js"></script>
 <script src="project.edit.view.js"></script>
+<script src="project.chart.view.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 <div class="container-fluid">
+
+<div class="row">
+
+ <div class="col-md-8">
+  <div class="container-fluid">
     <div class="row">
         <div class="col-md-12"><p class="text-center"><h4>Simple BackboneJS example, Click Cell to EDIT</h4></p></div>
     </div>   
- 
-    <div class="row">
-        <div id="content" class="col-md-12"></div>
-    </div>	
-
-     <div class="row">
-        <div id="add" class="col-md-12"></div>
-    </div>	
-
-
     
-   <!-- Backbone View renders HTML here -->
+   <div class="row"> <!-- LIST -->
+     <div id="content" class="col-md-12"></div>
 
+   </div>
+    <div class="row"> <!-- ADD --> 
+        <div id="add" class="col-md-12"></div>
+    </div>  
+  </div>
+</div>
+
+<div class="col-md-4">  <!-- CHART -->
+      <div class="container-fluid">
+        <div class="row">
+           <div id="chart" class="col-md-12"></div>
+       </div>	
+      </div>
+ 
+    </div>
+</div> <!-- end Chart Div
+   <!-- Backbone View renders HTML here -->
+ </div>
 </div>
 
 
@@ -58,6 +75,9 @@
 
   var addView = new ProjectAddView();
   addView.render();
+
+  var chartView = new ProjectChartView();
+  chartView.render();
 
   
 

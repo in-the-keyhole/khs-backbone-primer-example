@@ -15,7 +15,7 @@ ProjectListView = Backbone.View.extend({
     events: {
 
     'click .glyphicon-remove' : 'delete',
-    'click  td' : 'edit'
+    'dblclick  td' : 'edit'
 
 
     
