@@ -11,7 +11,8 @@ ProjectEditView = Backbone.View.extend({
     events: {
 
 	    'click button#save' : 'save',
-	    'click button#cancel' : 'cancel'
+	    'click button#' : 'cancel'
+   
 		
     },
 
@@ -58,7 +59,7 @@ ProjectEditView = Backbone.View.extend({
     
     html: function() {
 
-       return  '<input  id="<%=id%>" type="text" value="<%=value%>"/> <button id="cancel">Cancel</button> <button id="save">Save</button>';
+       return  '<input  class="numeric" id="<%=id%>" type="text" value="<%=value%>"/> <button id="cancel">Cancel</button> <button id="save">Save</button>';
 
     }
 

@@ -9,9 +9,20 @@ ProjectAddView = Backbone.View.extend({
 
     events: {
 
-	    'click button#save' : 'save'
+	    'click button#save' : 'save',
+      'keyup .numeric' : 'numbersOnly'
 		
     },
+
+    numbersOnly: function(e) {
+
+      var id = e.target.id;
+      var i$ = $('#'+id);
+      var v = i$.val();
+      i$.val(v.replace(/[^0-9]/g, ''));
+
+    },
+
 
    save: function(e) {
 
@@ -54,8 +65,8 @@ ProjectAddView = Backbone.View.extend({
     html: function() {
 
        return  '<table class="table"><tr id="new-row"><td> <input id="name" type="text"/> </td> '+
-               '<td><input  id="resources" type="text"/> </td> '+
-               '<td><input  id="hours" type="text"/> <button id="save">Add</button></td> </tr></table>';
+               '<td><input class="numeric" id="resources" type="text"/> </td> '+
+               '<td><input class="numeric" id="hours" type="text"/> <button id="save">Add</button></td> </tr></table>';
 
     }
 
